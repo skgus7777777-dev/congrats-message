@@ -1,237 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💕 엄마, 생신 축하드려요! 💕</title>
-    <style>
-        /* 기본 스타일 및 핑크빛 그라데이션 배경 */
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background: linear-gradient(135deg, #ffeef2 0%, #ffd1dc 100%);
-            margin: 0;
-            padding: 20px;
-            color: #4a4a4a;
-            min-height: 100vh;
-        }
-
-        /* 중앙 정렬 컨테이너 */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        /* 반짝이는 메인 타이틀 효과 */
-        h1 {
-            text-align: center;
-            color: #ff4d6d;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px #fff, 0 0 20px #ffb3c1, 0 0 30px #ff4d6d;
-            animation: blink 2s infinite alternate;
-        }
-
-        @keyframes blink {
-            0% { opacity: 0.9; text-shadow: 0 0 10px #fff, 0 0 20px #ffb3c1; }
-            100% { opacity: 1; text-shadow: 0 0 15px #fff, 0 0 30px #ff4d6d, 0 0 40px #ff0054; }
-        }
-
-        /* 메시지 입력 폼 스타일 */
-        .input-form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            border: 2px solid #ffccd5;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #ff758f;
-        }
-
-        .input-group input, .input-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ffe5ec;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1em;
-            background-color: #fffafb;
-        }
-
-        .input-group input:focus, .input-group textarea:focus {
-            outline: none;
-            border-color: #ff758f;
-            box-shadow: 0 0 8px rgba(255, 117, 143, 0.3);
-        }
-
-        /* 등록 버튼 */
-        .submit-btn {
-            background: linear-gradient(45deg, #ff758f, #ff4d6d);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            border-radius: 25px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
-        }
-
-        /* 축하 카드 그리드 레이아웃 */
-        .rolling-paper {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        /* 메시지 카드 개별 스타일 */
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border: 1px solid #ffe5ec;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px) scale(1.02);
-            border-color: #ff758f;
-        }
-
-        /* 카드 내부 이미지 */
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #ffeef2;
-        }
-
-        /* 카드 내부 텍스트 */
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-name {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #ff4d6d;
-            margin-bottom: 10px;
-            border-bottom: 1px dashed #ffe5ec;
-            padding-bottom: 5px;
-        }
-
-        .card-message {
-            font-size: 0.95em;
-            line-height: 1.6;
-            color: #555;
-            white-space: pre-wrap; /* 줄바꿈 유지 */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사랑하는 엄마의 생신 ♡</title>
+<style>
+:root {
+  --pink: #d88d9e;
+  --deep: #a85d72;
+  --cream: #fff8f3;
+  --text: #604951;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg,#fff0f2,#fff9ef,#f9e9ed);
+  line-height: 1.8;
+}
+.hero {
+  text-align: center;
+  padding: 65px 20px 45px;
+  background: linear-gradient(#fff4f2dd,#fff8f4ee),
+    radial-gradient(circle at top,#f4cbd3,#fff8f3);
+}
+.eyebrow {
+  letter-spacing: 4px;
+  color: var(--deep);
+  font-size: 12px;
+}
+h1 {
+  color: var(--deep);
+  font-family: Georgia, serif;
+  font-size: clamp(30px,7vw,48px);
+  line-height: 1.35;
+  margin: 18px 0;
+}
+.hero p { margin: 8px 0; }
+.flower { font-size: 42px; }
+.wrap { max-width: 760px; margin: auto; padding: 20px; }
+.panel {
+  background: #ffffffd9;
+  border: 1px solid #f1dce0;
+  border-radius: 22px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px #c58a9810;
+}
+h2 {
+  color: var(--deep);
+  font-size: 23px;
+  margin: 0 0 12px;
+}
+.letter {
+  white-space: pre-line;
+  line-height: 2;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #e8cbd2;
+  border-radius: 12px;
+  background: #fffdfb;
+  color: var(--text);
+  padding: 13px;
+  font: inherit;
+  margin: 10px 0;
+}
+textarea { min-height: 110px; resize: vertical; }
+button, .upload-label {
+  display: inline-block;
+  border: 0;
+  border-radius: 30px;
+  padding: 12px 20px;
+  background: var(--pink);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+button:hover, .upload-label:hover { background: var(--deep); }
+.secondary { background: #ead0d6; color: #704451; }
+input[type=file] { display: none; }
+.preview {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+.photo-card {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff3f5;
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.photo-card figcaption {
+  padding: 8px;
+  font-size: 13px;
+  text-align: center;
+}
+.message-card {
+  background: #fff5f5;
+  border-radius: 14px;
+  padding: 15px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.message-card strong { color: var(--deep); }
+.message-card p { margin-bottom: 0; }
+.hint { color: #987983; font-size: 13px; }
+footer {
+  text-align: center;
+  color: var(--deep);
+  padding: 30px 15px 45px;
+}
+@media(max-width:480px) {
+  .panel { padding: 19px; }
+  .preview { grid-template-columns: 1fr 1fr; }
+}
+</style>
 </head>
 <body>
 
-<div class="container">
-    <h1>✨ 엄마의 생신을 축하합니다 ✨</h1>
-    
-    <!-- 메시지 작성 양식 -->
-    <div class="input-form">
-        <div class="input-group">
-            <label for="username">💝 남기는 사람 이름</label>
-            <input type="text" id="username" placeholder="예: 첫째 딸, 사위">
-        </div>
-        <div class="input-group">
-            <label for="photoUrl">📸 사진 이미지 링크 (URL)</label>
-            <input type="text" id="photoUrl" placeholder="https://... 형식의 인터넷 이미지 주소를 넣어주세요">
-        </div>
-        <div class="input-group">
-            <label for="message">💌 축하 메시지</label>
-            <textarea id="message" rows="4" placeholder="엄마에게 전하고 싶은 진심 어린 한마디를 적어주세요."></textarea>
-        </div>
-        <button class="submit-btn" onclick="addCard()">✨ 축하 카드 등록하기 ✨</button>
-    </div>
+<header class="hero">
+  <div class="flower">🌷 💗 🌷</div>
+  <div class="eyebrow">HAPPY BIRTHDAY, MOM</div>
+  <h1>세상에서 가장 소중한<br>우리 엄마</h1>
+  <p>엄마, 생신을 진심으로 축하해요.</p>
+  <p>오늘 하루 누구보다 행복하고 많이 웃으세요 ♡</p>
+</header>
 
-    <!-- 카드가 누적되는 영역 -->
-    <div class="rolling-paper" id="rollingPaper">
-        <!-- 기본 예시 카드 -->
-        <div class="card">
-            <img src="https://unsplash.com" alt="추천 기본 이미지">
-            <div class="card-content">
-                <div class="card-name">가족 일동 💕</div>
-                <div class="card-message">엄마 생신을 진심으로 축하드려요!\n언제나 우리 곁에서 든든한 버팀목이 되어주셔서 감사해요. 세상에서 가장 행복한 하루 보내세요! 사랑합니다.</div>
-            </div>
-        </div>
+<main class="wrap">
+
+  <section class="panel">
+    <h2>💌 엄마에게 전하는 편지</h2>
+    <div class="letter">사랑하는 엄마에게.
+
+엄마, 생신 정말 축하해요! 🎂
+
+항상 우리를 사랑으로 보살펴 주고
+언제나 든든한 편이 되어 줘서 고마워요.
+
+평소에는 쑥스러워서 다 표현하지 못했지만
+엄마는 나에게 세상에서 가장 소중한 사람이에요.
+
+앞으로는 엄마가 더 많이 웃고,
+좋아하는 것도 마음껏 하면서
+건강하고 행복하게 지냈으면 좋겠어요.
+
+세상에 하나뿐인 우리 엄마,
+태어나 줘서 고맙고 정말 많이 사랑해요.
+
+오늘 하루는 엄마가 주인공이에요! ❤️</div>
+  </section>
+
+  <section class="panel">
+    <h2>📸 우리 함께한 소중한 추억</h2>
+    <p>엄마와 함께 찍은 사진을 골라서 추가해 주세요.</p>
+    <label class="upload-label" for="photoInput">＋ 사진 추가하기</label>
+    <input id="photoInput" type="file" accept="image/*" multiple>
+    <div id="photoPreview" class="preview"></div>
+    <p class="hint">사진은 현재 브라우저 화면에서 미리 볼 수 있어요. 다른 사람과 공유하려면 별도 업로드 기능이 필요해요.</p>
+  </section>
+
+  <section class="panel">
+    <h2>💗 엄마에게 사랑의 메시지 남기기</h2>
+    <p>가족들이 한마디씩 축하 메시지를 적어 보세요.</p>
+    <form id="messageForm">
+      <input id="nickname" maxlength="40"
+        placeholder="이름 또는 애칭 (예: 사랑하는 딸)" required>
+      <textarea id="message" maxlength="1000"
+        placeholder="엄마에게 전하고 싶은 말을 적어 주세요 ♡"
+        required></textarea>
+      <button type="submit">축하 메시지 남기기 ♡</button>
+    </form>
+    <div id="messages">
+      <p class="hint">첫 번째 축하 메시지를 남겨 주세요! 🌸</p>
     </div>
-</div>
+    <p class="hint">메시지는 현재 페이지 안에서만 표시되며, 새로고침하면 사라질 수 있어요.</p>
+  </section>
+
+  <section class="panel" style="text-align:center">
+    <div style="font-size:38px">🎂 🎁 💐</div>
+    <h2>엄마, 오래오래 건강하고 행복해요!</h2>
+    <p>매일매일 사랑하고, 오늘은 백 배 더 사랑해요.</p>
+    <p style="color:#b86e83">Happy Birthday to the Best Mom ♡</p>
+  </section>
+
+</main>
+
+<footer>
+  사랑을 가득 담아, 우리 가족이 ♡
+</footer>
 
 <script>
-    // 카드를 추가하는 함수
-    function addCard() {
-        const nameInput = document.getElementById('username');
-        const photoInput = document.getElementById('photoUrl');
-        const messageInput = document.getElementById('message');
-        const paper = document.getElementById('rollingPaper');
+const photoInput = document.getElementById("photoInput");
+const photoPreview = document.getElementById("photoPreview");
 
-        // 유효성 검사 (이름과 메시지는 필수)
-        if (!nameInput.value.trim() || !messageInput.value.trim()) {
-            alert('이름과 축하 메시지를 입력해주세요! 💕');
-            return;
-        }
+photoInput.addEventListener("change", function() {
+  Array.from(this.files).forEach(function(file) {
+    if (!file.type.startsWith("image/")) return;
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const figure = document.createElement("figure");
+      figure.className = "photo-card";
+      const img = document.createElement("img");
+      img.src = event.target.result;
+      img.alt = "가족의 추억 사진";
+      const caption = document.createElement("figcaption");
+      caption.textContent = file.name;
+      figure.append(img, caption);
+      photoPreview.appendChild(figure);
+    };
+    reader.readAsDataURL(file);
+  });
+  this.value = "";
+});
 
-        // 기본 이미지 설정 (사진 주소가 없을 때 보일 핑크 하트 이미지)
-        const defaultImg = "https://unsplash.com";
-        const imgSrc = photoInput.value.trim() ? photoInput.value.trim() : defaultImg;
+const form = document.getElementById("messageForm");
+const messages = document.getElementById("messages");
 
-        // 새 카드 HTML 구조 생성
-        const card = document.createElement('div');
-        card.className = 'card';
-        
-        card.innerHTML = `
-            <img src="${imgSrc}" onerror="this.src='${defaultImg}'" alt="축하 사진">
-            <div class="card-content">
-                <div class="card-name">${escapeHtml(nameInput.value)}</div>
-                <div class="card-message">${escapeHtml(messageInput.value)}</div>
-            </div>
-        `;
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const nickname = document.getElementById("nickname").value.trim();
+  const message = document.getElementById("message").value.trim();
+  if (!nickname || !message) return;
 
-        // 최신 카드가 앞에 오도록 추가
-        paper.insertBefore(card, paper.firstChild);
+  const card = document.createElement("article");
+  card.className = "message-card";
+  const name = document.createElement("strong");
+  name.textContent = "♡ " + nickname;
+  const words = document.createElement("p");
+  words.textContent = message;
+  card.append(name, words);
 
-        // 입력창 초기화
-        nameInput.value = '';
-        photoInput.value = '';
-        messageInput.value = '';
-    }
-
-    // 보안을 위한 HTML 특수문자 치환 함수
-    function escapeHtml(text) {
-        return text
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
+  const hint = messages.querySelector(".hint");
+  if (hint) messages.innerHTML = "";
+  messages.prepend(card);
+  form.reset();
+});
 </script>
 
 </body>
