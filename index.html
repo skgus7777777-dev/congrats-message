@@ -1,299 +1,283 @@
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>사랑하는 엄마의 생일 ❤️</title>
+:root {
+  --bg: #fff2f5;
+  --paper: #fffdfd;
+  --text: #6d4b55;
+  --accent: #d7839b;
+  --line: #f2d5df;
+  --pink-light: #ffe5ed;
+  --pink-dark: #b96782;
+}
 
-<style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Noto Sans KR", sans-serif;
-  background: #fff9f5;
-  color: #644c49;
+  padding: 24px 14px;
+  background:
+    radial-gradient(ellipse at top left, #ffe0eb 0, transparent 38%),
+    linear-gradient(180deg, #fff4f7, #fff9f7 55%, #ffedf3);
+  color: var(--text);
+  font-family: Arial, "Noto Sans KR", "Noto Sans TC", sans-serif;
   line-height: 1.8;
 }
 
-.hero {
-  min-height: 90vh;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(160deg, #fff0f0, #fffaf0);
+main {
+  max-width: 900px;
+  margin: auto;
 }
 
-.flower { font-size: 42px; }
+header,
+.panel {
+  background: rgba(255, 253, 253, 0.96);
+  border: 1px solid #f8dce5;
+  border-radius: 26px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 35px #b96f8614;
+}
 
-.hero h1 {
-  font-size: clamp(30px, 7vw, 48px);
+header {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+header > div:first-child {
+  color: var(--pink-dark);
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+h1 {
+  color: #b96782;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 7vw, 50px);
+  line-height: 1.3;
+  margin: 22px 0 12px;
+}
+
+h2 {
+  color: #b96782;
+  font-size: 23px;
   line-height: 1.5;
-  margin: 20px 0 10px;
-}
-
-.hero p { color: #9c7772; }
-
-.hero img {
-  width: min(100%, 340px);
-  height: 350px;
-  object-fit: cover;
-  border-radius: 170px 170px 18px 18px;
-  margin: 24px 0;
-  box-shadow: 0 12px 35px #b9878725;
-}
-
-button {
-  border: 0;
-  background: #c8878c;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 28px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-section {
-  padding: 55px 18px;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 27px;
-  margin-bottom: 5px;
 }
 
 .subtitle {
-  color: #ad8580;
-  margin-bottom: 28px;
+  color: #bd8092;
+}
+
+.cover {
+  background: linear-gradient(145deg, #ffe5ed, #fff5f0, #fce6ef);
+  border: 1px solid #f5d3df;
+  border-radius: 22px;
+  padding: 42px 14px;
+  margin-top: 26px;
+  position: relative;
+}
+
+.cover::before {
+  content: "✿  ♡  ✿";
+  display: block;
+  color: #d7839b;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cover strong {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 5vw, 42px);
+  color: #a95e78;
+}
+
+.cover p {
+  margin-bottom: 0;
 }
 
 .album {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  max-width: 760px;
-  margin: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.photo {
+.photo-card {
   background: white;
   padding: 9px;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px #805c5210;
+  border-radius: 5px;
+  border: 1px solid #f1dce2;
+  box-shadow: 0 5px 16px #a15d7210;
+  transform: rotate(-1deg);
 }
 
-.photo img {
+.photo-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.photo-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 3px;
   display: block;
-  border-radius: 8px;
 }
 
-.photo p {
-  font-size: 14px;
-  margin: 9px 0 3px;
-}
-
-.letters { background: #fff0f0; }
-
-.letter-list {
-  max-width: 650px;
-  margin: auto;
-  display: grid;
-  gap: 20px;
-}
-
-.letter {
-  text-align: left;
-  padding: 24px;
-  background: #fffdfb;
-  border: 1px solid #f4dfdc;
-  border-radius: 14px;
-  box-shadow: 0 5px 18px #805c520a;
-}
-
-.letter h3 {
-  margin-top: 0;
-  color: #b36f77;
-}
-
-.letter .content {
-  white-space: pre-line;
-}
-
-.signature {
-  text-align: right;
-  color: #b36f77;
-  margin-bottom: 0;
-}
-
-.closing {
-  padding: 65px 22px;
-  background: #f7e5df;
+.caption {
+  font-size: 13px;
+  padding: 10px 3px 4px;
   text-align: center;
 }
 
-.closing h2 { font-size: 29px; }
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #96596f;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #f0d2dd;
+  border-radius: 14px;
+  font: inherit;
+  background: #fffafb;
+  color: var(--text);
+  outline: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #d7839b;
+  box-shadow: 0 0 0 3px #fce3eb;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+input[type="file"] {
+  max-width: 100%;
+  padding: 10px 0;
+  color: #956879;
+}
+
+#preview {
+  display: none;
+  max-width: 100%;
+  max-height: 260px;
+  border: 5px solid white;
+  box-shadow: 0 3px 14px #a15d7220;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  border-radius: 30px;
+  color: white;
+  background: linear-gradient(100deg, #d7839b, #c66e8c);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 14px #d7839b30;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#status {
+  font-size: 13px;
+  color: #a45e79;
+}
+
+.messages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.message-card {
+  background: linear-gradient(145deg, #fff6f8, #fffafb);
+  border: 1px solid #f1d5df;
+  border-radius: 18px;
+  padding: 18px;
+  overflow-wrap: anywhere;
+  box-shadow: 0 5px 18px #a15d720c;
+}
+
+.message-card > div:first-child {
+  font-weight: bold;
+  color: #b96782;
+}
+
+.message-card img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-top: 12px;
+  border-radius: 12px;
+  background: white;
+}
+
+.date {
+  color: #b3949e;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.empty {
+  text-align: center;
+  padding: 24px;
+  color: #b08091;
+}
 
 footer {
   text-align: center;
-  padding: 20px;
-  color: #a7867f;
-  font-size: 12px;
+  font-size: 13px;
+  padding: 24px 10px;
+  color: #b08091;
 }
 
-@media (max-width: 360px) {
-  .album { grid-template-columns: 1fr; }
-  .hero img { height: 290px; }
+@media (max-width: 600px) {
+  body {
+    padding: 14px 10px;
+  }
+
+  header,
+  .panel {
+    padding: 19px;
+    border-radius: 21px;
+  }
+
+  .album {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .messages {
+    grid-template-columns: 1fr;
+  }
 }
-</style>
-</head>
-
-<body>
-
-<!-- 첫 화면 -->
-<header class="hero">
-  <div class="flower">🌷 🤍 🌷</div>
-  <p>OUR DEAREST MOM · 사랑하는 우리 엄마</p>
-
-  <h1>
-    엄마, 생일 축하해요!<br>
-    親愛的媽媽，生日快樂
-  </h1>
-
-  <p>
-    세상에서 가장 소중한 엄마에게<br>
-    給世界上最珍貴的媽媽
-  </p>
-
-  <img src="./images/family1.jpg"
-       alt="사랑하는 우리 가족">
-
-  <button onclick="document.getElementById('memories')
-    .scrollIntoView({behavior:'smooth'})">
-    우리의 추억 보러 가기 ↓
-  </button>
-</header>
-
-<!-- 가족사진 앨범 -->
-<section id="memories">
-  <div style="font-size:30px">📷 🌸</div>
-  <h2 class="section-title">우리 가족의 추억</h2>
-  <p class="subtitle">
-    和媽媽一起度過的珍貴時光
-  </p>
-
-  <div class="album">
-    <div class="photo">
-      <img src="./images/family1.jpg" alt="가족사진 1">
-      <p>언제나 함께라서 행복해</p>
-    </div>
-
-    <div class="photo">
-      <img src="./images/family2.jpg" alt="가족사진 2">
-      <p>우리 가족의 소중한 순간</p>
-    </div>
-
-    <div class="photo">
-      <img src="./images/family3.jpg" alt="가족사진 3">
-      <p>웃음이 가득했던 하루</p>
-    </div>
-
-    <div class="photo">
-      <img src="./images/family4.jpg" alt="가족사진 4">
-      <p>앞으로도 함께 만들 추억</p>
-    </div>
-  </div>
-</section>
-
-<!-- 가족들의 편지 -->
-<section class="letters">
-  <div style="font-size:30px">💌</div>
-  <h2 class="section-title">엄마에게 보내는 편지</h2>
-  <p class="subtitle">
-    寫給媽媽的信 · 가족들의 진심을 담아서
-  </p>
-
-  <div class="letter-list">
-
-    <article class="letter">
-      <h3>🌷 우리 딸이 엄마에게</h3>
-      <div class="content">사랑하는 엄마에게,
-
-엄마, 생일 정말 축하해요!
-항상 우리를 사랑해 주고
-늘 가족을 위해 애써 줘서 고마워요.
-
-평소에는 쑥스러워서 다 표현하지 못했지만
-엄마는 나에게 세상에서 정말 소중한 사람이에요.
-
-앞으로는 엄마가 더 많이 웃고,
-건강하고 행복한 날들을 보냈으면 좋겠어요.
-
-엄마의 딸이라서 정말 행복해요.
-오래오래 우리 곁에 있어 주세요.
-
-사랑해요, 엄마. ❤️</div>
-      <p class="signature">사랑하는 딸이 💕</p>
-    </article>
-
-    <article class="letter">
-      <h3>🌼 가족이 엄마에게</h3>
-      <div class="content">사랑하는 엄마에게,
-
-생일을 진심으로 축하해요!
-우리 가족에게 늘 따뜻한 사랑을 주고
-힘이 되어 줘서 고마워요.
-
-엄마가 있어 우리 집은 언제나 따뜻하고
-함께하는 시간이 더욱 소중해요.
-
-오늘만큼은 모든 걱정을 내려놓고
-세상에서 가장 행복한 하루를 보내세요.
-
-앞으로도 우리 함께 웃고,
-맛있는 것도 먹고,
-예쁜 추억을 많이 만들어 가요.
-
-엄마, 정말 사랑해요! ❤️</div>
-      <p class="signature">사랑하는 우리 가족 올림</p>
-    </article>
-
-    <!-- 편지를 더 추가하려면 article 블록을 복사하세요. -->
-
-  </div>
-</section>
-
-<!-- 마지막 축하 화면 -->
-<section class="closing">
-  <div style="font-size:38px">🎂 💗 🌷</div>
-  <h2>엄마, 태어나 줘서 고마워요</h2>
-
-  <p>
-    媽媽，謝謝妳來到這個世界。<br>
-    謝謝妳一直以來的愛與付出。
-  </p>
-
-  <p>
-    앞으로의 모든 날이 오늘처럼 따뜻하고<br>
-    행복한 일들로 가득하기를 바라요.
-  </p>
-
-  <h3>우리는 언제나 엄마 편이에요.</h3>
-  <p>我們永遠愛妳 ❤️</p>
-  <div style="font-size:28px">♡ ♡ ♡</div>
-</section>
-
-<footer>
-  Made with love for Mom · 媽媽生日快樂
-</footer>
-
-</body>
-</html>
