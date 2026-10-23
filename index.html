@@ -1,357 +1,238 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Birthday, Mom ♡</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<style>
-:root {
-  --bg:#f5eee8; --paper:#fffdf9; --text:#594a43;
-  --accent:#ad7867; --line:#e9dcd2;
-}
-* { box-sizing:border-box; }
-body {
-  margin:0; padding:20px 12px;
-  background:var(--bg); color:var(--text);
-  font-family:Arial,"Noto Sans KR","Noto Sans TC",sans-serif;
-  line-height:1.7;
-}
-main { max-width:900px; margin:auto; }
-header,.panel {
-  background:var(--paper); border-radius:24px;
-  padding:26px; margin-bottom:22px;
-  box-shadow:0 10px 35px #5c433012;
-}
-header { text-align:center; overflow:hidden; }
-h1 { font-size:clamp(30px,6vw,46px); }
-h2 { font-size:23px; }
-.subtitle { color:var(--accent); }
-.cover {
-  background:linear-gradient(135deg,#e9d8cb,#f7eee5,#e6e6d9);
-  border-radius:18px; padding:40px 12px;
-  margin-top:22px;
-}
-.cover strong {
-  font-family:Georgia,serif; font-size:clamp(25px,5vw,40px);
-}
-.cover p { margin-bottom:0; }
-.album {
-  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
-}
-.photo-card {
-  background:#fff; padding:8px; border-radius:14px;
-  border:1px solid var(--line);
-}
-.photo-card img {
-  width:100%; aspect-ratio:4/3; object-fit:cover;
-  border-radius:10px; display:block;
-}
-.caption { font-size:13px; padding:8px 3px; }
-label { display:block; font-size:14px; font-weight:bold; margin-bottom:5px; }
-input[type=text],textarea {
-  width:100%; padding:12px; border:1px solid var(--line);
-  border-radius:12px; font:inherit; background:white;
-}
-textarea { min-height:120px; resize:vertical; }
-.field { margin-bottom:16px; }
-input[type=file] { max-width:100%; }
-#preview { display:none; max-width:100%; max-height:260px;
-  border-radius:12px; margin-top:12px; }
-button {
-  width:100%; border:0; padding:14px; border-radius:12px;
-  color:white; background:var(--accent); font-size:16px;
-  cursor:pointer;
-}
-button:disabled { opacity:.6; }
-#status { font-size:13px; }
-.messages { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-.message-card {
-  background:#fbf4ef; border:1px solid var(--line);
-  border-radius:14px; padding:16px; overflow-wrap:anywhere;
-}
-.message-card img {
-  display:block; width:100%; max-height:300px;
-  object-fit:contain; margin-top:10px; border-radius:10px;
-}
-.date { color:#9a877c; font-size:12px; margin-top:10px; }
-.empty { text-align:center; padding:20px; color:#8d7a70; }
-footer { text-align:center; font-size:13px; padding:20px; }
-@media(max-width:600px) {
-  header,.panel { padding:18px; }
-  .album { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .messages { grid-template-columns:1fr; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 엄마, 생신 축하드려요! 💕</title>
+    <style>
+        /* 기본 스타일 및 핑크빛 그라데이션 배경 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #ffeef2 0%, #ffd1dc 100%);
+            margin: 0;
+            padding: 20px;
+            color: #4a4a4a;
+            min-height: 100vh;
+        }
+
+        /* 중앙 정렬 컨테이너 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        /* 반짝이는 메인 타이틀 효과 */
+        h1 {
+            text-align: center;
+            color: #ff4d6d;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ffb3c1, 0 0 30px #ff4d6d;
+            animation: blink 2s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.9; text-shadow: 0 0 10px #fff, 0 0 20px #ffb3c1; }
+            100% { opacity: 1; text-shadow: 0 0 15px #fff, 0 0 30px #ff4d6d, 0 0 40px #ff0054; }
+        }
+
+        /* 메시지 입력 폼 스타일 */
+        .input-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 2px solid #ffccd5;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ff758f;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffe5ec;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            background-color: #fffafb;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #ff758f;
+            box-shadow: 0 0 8px rgba(255, 117, 143, 0.3);
+        }
+
+        /* 등록 버튼 */
+        .submit-btn {
+            background: linear-gradient(45deg, #ff758f, #ff4d6d);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        /* 축하 카드 그리드 레이아웃 */
+        .rolling-paper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* 메시지 카드 개별 스타일 */
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #ffe5ec;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ff758f;
+        }
+
+        /* 카드 내부 이미지 */
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ffeef2;
+        }
+
+        /* 카드 내부 텍스트 */
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff4d6d;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ffe5ec;
+            padding-bottom: 5px;
+        }
+
+        .card-message {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #555;
+            white-space: pre-wrap; /* 줄바꿈 유지 */
+        }
+    </style>
 </head>
 <body>
-<main>
-<header>
-  <div>✿ OUR FAMILY · OUR MEMORIES ✿</div>
-  <h1>Happy Birthday, Mom ♡</h1>
-  <p class="subtitle">엄마, 생일 축하해요! · 媽媽，生日快樂！</p>
-  <p>
-    엄마와 함께한 소중한 순간들을 사진과 마음으로 모아요.<br>
-    讓我們用照片和祝福，收藏與媽媽一起度過的珍貴時光。
-  </p>
-  <div class="cover">
-    <strong>For Our Dearest Mom</strong>
-    <p>세상에서 가장 사랑하는 엄마에게<br>
-    給我們最愛的媽媽 ♡</p>
-  </div>
-</header>
 
-<section class="panel">
-  <h2>우리의 추억 앨범 · 家庭回憶相簿</h2>
-  <p>사랑하는 가족과 함께한 순간 · 和家人一起度過的美好時光</p>
-
-  <div class="album">
-    <!-- 가족사진 파일을 photos 폴더에 넣고 아래 경로를 수정하세요 -->
-    <article class="photo-card">
-      <img src="photos/family-01.jpg" alt="가족사진 1">
-      <div class="caption">우리 가족의 추억 · 我們家的回憶</div>
-    </article>
-
-    <article class="photo-card">
-      <img src="photos/family-02.jpg" alt="가족사진 2">
-      <div class="caption">엄마와 함께 · 和媽媽在一起</div>
-    </article>
-
-    <article class="photo-card">
-      <img src="photos/family-03.jpg" alt="가족사진 3">
-      <div class="caption">행복한 순간 · 幸福的時刻</div>
-    </article>
-  </div>
-  <p style="font-size:12px;color:#8d7a70">
-    사진 파일이 없다면 위의 사진 경로를 실제 파일명으로 바꿔 주세요.
-  </p>
-</section>
-
-<section class="panel">
-  <h2>엄마에게 편지 쓰기 · 留下給媽媽的祝福</h2>
-  <form id="form">
-    <div class="field">
-      <label for="nickname">닉네임 · 暱稱（익명 가능／可匿名）</label>
-      <input id="nickname" type="text" maxlength="50"
-        placeholder="사랑하는 딸 · 愛媽媽的女兒">
+<div class="container">
+    <h1>✨ 엄마의 생신을 축하합니다 ✨</h1>
+    
+    <!-- 메시지 작성 양식 -->
+    <div class="input-form">
+        <div class="input-group">
+            <label for="username">💝 남기는 사람 이름</label>
+            <input type="text" id="username" placeholder="예: 첫째 딸, 사위">
+        </div>
+        <div class="input-group">
+            <label for="photoUrl">📸 사진 이미지 링크 (URL)</label>
+            <input type="text" id="photoUrl" placeholder="https://... 형식의 인터넷 이미지 주소를 넣어주세요">
+        </div>
+        <div class="input-group">
+            <label for="message">💌 축하 메시지</label>
+            <textarea id="message" rows="4" placeholder="엄마에게 전하고 싶은 진심 어린 한마디를 적어주세요."></textarea>
+        </div>
+        <button class="submit-btn" onclick="addCard()">✨ 축하 카드 등록하기 ✨</button>
     </div>
 
-    <div class="field">
-      <label for="message">축하 메시지 · 生日祝福</label>
-      <textarea id="message" maxlength="1000" required
-        placeholder="엄마, 생일 진심으로 축하해요! 늘 건강하고 행복하세요. ♡&#10;媽媽，祝您生日快樂！希望您每天都健康、幸福。♡"></textarea>
+    <!-- 카드가 누적되는 영역 -->
+    <div class="rolling-paper" id="rollingPaper">
+        <!-- 기본 예시 카드 -->
+        <div class="card">
+            <img src="https://unsplash.com" alt="추천 기본 이미지">
+            <div class="card-content">
+                <div class="card-name">가족 일동 💕</div>
+                <div class="card-message">엄마 생신을 진심으로 축하드려요!\n언제나 우리 곁에서 든든한 버팀목이 되어주셔서 감사해요. 세상에서 가장 행복한 하루 보내세요! 사랑합니다.</div>
+            </div>
+        </div>
     </div>
-
-    <div class="field">
-      <label for="photo">사진 첨부 · 附上照片（선택／選填）</label>
-      <input id="photo" type="file"
-        accept="image/jpeg,image/png,image/webp,image/gif">
-      <p style="font-size:12px">사진은 5MB 이하 · 照片請小於 5MB</p>
-      <img id="preview" alt="사진 미리보기">
-    </div>
-
-    <button id="submit" type="submit">
-      축하 메시지 남기기 ♡ · 送出祝福
-    </button>
-    <p id="status" aria-live="polite"></p>
-  </form>
-</section>
-
-<section class="panel">
-  <h2>사랑이 모이는 곳 · 愛的留言牆</h2>
-  <div id="messages" class="messages">
-    <div class="empty">留言載入中… · 메시지를 불러오는 중…</div>
-  </div>
-</section>
-
-<footer>
-  Made with love for Mom ♡<br>
-  엄마, 늘 사랑하고 감사해요. · 媽媽，我們永遠愛您。
-</footer>
-</main>
+</div>
 
 <script>
-// Supabase 대시보드에서 복사한 값으로 교체하세요.
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
-const BUCKET = "birthday-photos";
+    // 카드를 추가하는 함수
+    function addCard() {
+        const nameInput = document.getElementById('username');
+        const photoInput = document.getElementById('photoUrl');
+        const messageInput = document.getElementById('message');
+        const paper = document.getElementById('rollingPaper');
 
-const configured =
-  SUPABASE_URL.startsWith("https://") &&
-  !SUPABASE_URL.includes("YOUR_SUPABASE") &&
-  SUPABASE_KEY &&
-  !SUPABASE_KEY.includes("YOUR_SUPABASE");
+        // 유효성 검사 (이름과 메시지는 필수)
+        if (!nameInput.value.trim() || !messageInput.value.trim()) {
+            alert('이름과 축하 메시지를 입력해주세요! 💕');
+            return;
+        }
 
-const db = configured
-  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
-  : null;
+        // 기본 이미지 설정 (사진 주소가 없을 때 보일 핑크 하트 이미지)
+        const defaultImg = "https://unsplash.com";
+        const imgSrc = photoInput.value.trim() ? photoInput.value.trim() : defaultImg;
 
-const form = document.getElementById("form");
-const photoInput = document.getElementById("photo");
-const preview = document.getElementById("preview");
-const statusBox = document.getElementById("status");
-const messagesBox = document.getElementById("messages");
-const submitButton = document.getElementById("submit");
-let selectedPhoto = null;
+        // 새 카드 HTML 구조 생성
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        card.innerHTML = `
+            <img src="${imgSrc}" onerror="this.src='${defaultImg}'" alt="축하 사진">
+            <div class="card-content">
+                <div class="card-name">${escapeHtml(nameInput.value)}</div>
+                <div class="card-message">${escapeHtml(messageInput.value)}</div>
+            </div>
+        `;
 
-function textElement(tag, className, text) {
-  const el = document.createElement(tag);
-  el.className = className;
-  el.textContent = text;
-  return el;
-}
+        // 최신 카드가 앞에 오도록 추가
+        paper.insertBefore(card, paper.firstChild);
 
-// 사진 선택 및 미리보기
-photoInput.addEventListener("change", () => {
-  selectedPhoto = photoInput.files[0] || null;
-
-  if (!selectedPhoto) {
-    preview.style.display = "none";
-    preview.removeAttribute("src");
-    return;
-  }
-
-  if (!selectedPhoto.type.startsWith("image/") ||
-      selectedPhoto.size > 5 * 1024 * 1024) {
-    alert("이미지 파일을 5MB 이하로 선택해 주세요. · 請選擇小於 5MB 的圖片。");
-    photoInput.value = "";
-    selectedPhoto = null;
-    preview.style.display = "none";
-    return;
-  }
-
-  preview.src = URL.createObjectURL(selectedPhoto);
-  preview.style.display = "block";
-});
-
-// 저장된 메시지 표시
-async function loadMessages() {
-  if (!db) {
-    messagesBox.replaceChildren(textElement(
-      "div", "empty",
-      "Supabase 설정이 필요해요. · 請先完成 Supabase 設定。"
-    ));
-    return;
-  }
-
-  const { data, error } = await db
-    .from("birthday_messages")
-    .select("id,nickname,message,photo_url,created_at")
-    .order("created_at", { ascending: false })
-    .limit(100);
-
-  if (error) {
-    console.error(error);
-    messagesBox.replaceChildren(textElement(
-      "div", "empty",
-      "留言載入失敗，請檢查設定。 · 메시지를 불러오지 못했어요."
-    ));
-    return;
-  }
-
-  messagesBox.replaceChildren();
-
-  if (!data.length) {
-    messagesBox.appendChild(textElement(
-      "div", "empty",
-      "첫 번째 축하 메시지를 남겨 주세요 ♡ · 歡迎留下第一則祝福 ♡"
-    ));
-    return;
-  }
-
-  data.forEach(item => {
-    const card = document.createElement("article");
-    card.className = "message-card";
-
-    card.appendChild(textElement("div", "", "♡ " + item.nickname));
-    card.appendChild(textElement("p", "", item.message));
-
-    if (item.photo_url) {
-      const img = document.createElement("img");
-      img.src = item.photo_url;
-      img.alt = "가족사진 · 家庭照片";
-      img.loading = "lazy";
-      card.appendChild(img);
+        // 입력창 초기화
+        nameInput.value = '';
+        photoInput.value = '';
+        messageInput.value = '';
     }
 
-    if (item.created_at) {
-      card.appendChild(textElement(
-        "div", "date",
-        new Date(item.created_at).toLocaleString("zh-TW")
-      ));
+    // 보안을 위한 HTML 특수문자 치환 함수
+    function escapeHtml(text) {
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
     }
-
-    messagesBox.appendChild(card);
-  });
-}
-
-// 메시지 및 선택 사진 저장
-form.addEventListener("submit", async event => {
-  event.preventDefault();
-
-  if (!db) {
-    statusBox.textContent =
-      "Supabase URL과 Publishable key를 먼저 입력해 주세요.";
-    return;
-  }
-
-  const nickname =
-    document.getElementById("nickname").value.trim() || "익명 · 匿名";
-  const message = document.getElementById("message").value.trim();
-
-  if (!message) return;
-
-  submitButton.disabled = true;
-  statusBox.textContent = "등록 중… · 送出中…";
-
-  try {
-    let photoUrl = null;
-
-    if (selectedPhoto) {
-      const ext = selectedPhoto.name.split(".").pop()
-        .toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
-      const path = crypto.randomUUID() + "." + ext;
-
-      const { error: uploadError } = await db.storage
-        .from(BUCKET)
-        .upload(path, selectedPhoto, {
-          contentType: selectedPhoto.type,
-          upsert: false
-        });
-
-      if (uploadError) throw uploadError;
-
-      photoUrl = db.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
-    }
-
-    const { error } = await db.from("birthday_messages").insert([{
-      nickname,
-      message,
-      photo_url: photoUrl
-    }]);
-
-    if (error) throw error;
-
-    form.reset();
-    selectedPhoto = null;
-    preview.removeAttribute("src");
-    preview.style.display = "none";
-    statusBox.textContent =
-      "축하 메시지가 등록됐어요! ♡ · 祝福已送出！";
-    await loadMessages();
-
-  } catch (error) {
-    console.error(error);
-    statusBox.textContent =
-      "등록 실패: Supabase 권한과 설정을 확인해 주세요. · 送出失敗，請檢查設定。";
-  } finally {
-    submitButton.disabled = false;
-  }
-});
-
-loadMessages();
 </script>
+
 </body>
 </html>
