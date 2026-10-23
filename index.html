@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리의 메시지 ♡</title>
+<style>
+body {
+  margin: 0;
+  padding: 25px 15px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff0f5, #f4edff);
+  color: #684653;
+}
+main {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 8px 30px #e8cad9;
+}
+header {
+  text-align: center;
+}
+.heart {
+  font-size: 45px;
+}
+h1 {
+  color: #d76a91;
+  font-size: 28px;
+}
+p {
+  line-height: 1.8;
+}
+input, textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #f0d5e1;
+  border-radius: 12px;
+  font-size: 16px;
+}
+textarea {
+  height: 120px;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #d76a91;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.note {
+  background: #fff2f7;
+  padding: 15px;
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+.name {
+  color: #c85e86;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="heart">💌✨</div>
+<h1>A Little Message For You ♡</h1>
+<p>
+그동안 정말 고마웠어요!<br>
+전하고 싶은 마음을 자유롭게 남겨 주세요 💗
+</p>
+</header>
+
+<form id="messageForm">
+<input id="nickname" placeholder="닉네임 (익명 가능)" required>
+<textarea id="message" placeholder="따뜻한 축하 메시지를 적어 주세요 ♡" required></textarea>
+<button type="submit">메시지 남기기 ♡</button>
+</form>
+
+<h3>💗 Our Messages</h3>
+<div id="messages">
+<p>첫 번째 메시지를 남겨 주세요!</p>
+</div>
+</main>
+
+<script>
+const form = document.getElementById("messageForm");
+const messages = document.getElementById("messages");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const nickname = document.getElementById("nickname").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!nickname || !message) return;
+
+  const card = document.createElement("div");
+  card.className = "note";
+
+  const name = document.createElement("div");
+  name.className = "name";
+  name.textContent = "♡ " + nickname;
+
+  const words = document.createElement("p");
+  words.textContent = message;
+
+  card.appendChild(name);
+  card.appendChild(words);
+
+  if (messages.textContent.includes("첫 번째 메시지")) {
+    messages.innerHTML = "";
+  }
+
+  messages.prepend(card);
+  form.reset();
+});
+</script>
+</body>
+</html>
