@@ -4,252 +4,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>사랑하는 엄마의 생신 ♡</title>
+<title>사랑하는 엄마의 생일 ❤️</title>
+
 <style>
-:root {
-  --pink: #d88d9e;
-  --deep: #a85d72;
-  --cream: #fff8f3;
-  --text: #604951;
-}
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
-  color: var(--text);
-  background: linear-gradient(160deg,#fff0f2,#fff9ef,#f9e9ed);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Noto Sans KR", sans-serif;
+  background: #fff9f5;
+  color: #644c49;
   line-height: 1.8;
 }
+
 .hero {
+  min-height: 90vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 65px 20px 45px;
-  background: linear-gradient(#fff4f2dd,#fff8f4ee),
-    radial-gradient(circle at top,#f4cbd3,#fff8f3);
+  background: linear-gradient(160deg, #fff0f0, #fffaf0);
 }
-.eyebrow {
-  letter-spacing: 4px;
-  color: var(--deep);
-  font-size: 12px;
-}
-h1 {
-  color: var(--deep);
-  font-family: Georgia, serif;
-  font-size: clamp(30px,7vw,48px);
-  line-height: 1.35;
-  margin: 18px 0;
-}
-.hero p { margin: 8px 0; }
+
 .flower { font-size: 42px; }
-.wrap { max-width: 760px; margin: auto; padding: 20px; }
-.panel {
-  background: #ffffffd9;
-  border: 1px solid #f1dce0;
-  border-radius: 22px;
-  padding: 25px;
-  margin: 20px 0;
-  box-shadow: 0 8px 25px #c58a9810;
+
+.hero h1 {
+  font-size: clamp(30px, 7vw, 48px);
+  line-height: 1.5;
+  margin: 20px 0 10px;
 }
-h2 {
-  color: var(--deep);
-  font-size: 23px;
-  margin: 0 0 12px;
+
+.hero p { color: #9c7772; }
+
+.hero img {
+  width: min(100%, 340px);
+  height: 350px;
+  object-fit: cover;
+  border-radius: 170px 170px 18px 18px;
+  margin: 24px 0;
+  box-shadow: 0 12px 35px #b9878725;
 }
-.letter {
-  white-space: pre-line;
-  line-height: 2;
-}
-input, textarea {
-  display: block;
-  width: 100%;
-  border: 1px solid #e8cbd2;
-  border-radius: 12px;
-  background: #fffdfb;
-  color: var(--text);
-  padding: 13px;
-  font: inherit;
-  margin: 10px 0;
-}
-textarea { min-height: 110px; resize: vertical; }
-button, .upload-label {
-  display: inline-block;
+
+button {
   border: 0;
-  border-radius: 30px;
-  padding: 12px 20px;
-  background: var(--pink);
+  background: #c8878c;
   color: white;
+  padding: 12px 24px;
+  border-radius: 28px;
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
+}
+
+section {
+  padding: 55px 18px;
   text-align: center;
 }
-button:hover, .upload-label:hover { background: var(--deep); }
-.secondary { background: #ead0d6; color: #704451; }
-input[type=file] { display: none; }
-.preview {
+
+.section-title {
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #ad8580;
+  margin-bottom: 28px;
+}
+
+.album {
   display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 12px;
-  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 760px;
+  margin: auto;
 }
-.photo-card {
-  margin: 0;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff3f5;
+
+.photo {
+  background: white;
+  padding: 9px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #805c5210;
 }
-.photo-card img {
-  display: block;
+
+.photo img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  display: block;
+  border-radius: 8px;
 }
-.photo-card figcaption {
-  padding: 8px;
-  font-size: 13px;
+
+.photo p {
+  font-size: 14px;
+  margin: 9px 0 3px;
+}
+
+.letters { background: #fff0f0; }
+
+.letter-list {
+  max-width: 650px;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+}
+
+.letter {
+  text-align: left;
+  padding: 24px;
+  background: #fffdfb;
+  border: 1px solid #f4dfdc;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px #805c520a;
+}
+
+.letter h3 {
+  margin-top: 0;
+  color: #b36f77;
+}
+
+.letter .content {
+  white-space: pre-line;
+}
+
+.signature {
+  text-align: right;
+  color: #b36f77;
+  margin-bottom: 0;
+}
+
+.closing {
+  padding: 65px 22px;
+  background: #f7e5df;
   text-align: center;
 }
-.message-card {
-  background: #fff5f5;
-  border-radius: 14px;
-  padding: 15px;
-  margin: 12px 0;
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
-}
-.message-card strong { color: var(--deep); }
-.message-card p { margin-bottom: 0; }
-.hint { color: #987983; font-size: 13px; }
+
+.closing h2 { font-size: 29px; }
+
 footer {
   text-align: center;
-  color: var(--deep);
-  padding: 30px 15px 45px;
+  padding: 20px;
+  color: #a7867f;
+  font-size: 12px;
 }
-@media(max-width:480px) {
-  .panel { padding: 19px; }
-  .preview { grid-template-columns: 1fr 1fr; }
+
+@media (max-width: 360px) {
+  .album { grid-template-columns: 1fr; }
+  .hero img { height: 290px; }
 }
 </style>
 </head>
+
 <body>
 
+<!-- 첫 화면 -->
 <header class="hero">
-  <div class="flower">🌷 💗 🌷</div>
-  <div class="eyebrow">HAPPY BIRTHDAY, MOM</div>
-  <h1>세상에서 가장 소중한<br>우리 엄마</h1>
-  <p>엄마, 생신을 진심으로 축하해요.</p>
-  <p>오늘 하루 누구보다 행복하고 많이 웃으세요 ♡</p>
+  <div class="flower">🌷 🤍 🌷</div>
+  <p>OUR DEAREST MOM · 사랑하는 우리 엄마</p>
+
+  <h1>
+    엄마, 생일 축하해요!<br>
+    親愛的媽媽，生日快樂
+  </h1>
+
+  <p>
+    세상에서 가장 소중한 엄마에게<br>
+    給世界上最珍貴的媽媽
+  </p>
+
+  <img src="./images/family1.jpg"
+       alt="사랑하는 우리 가족">
+
+  <button onclick="document.getElementById('memories')
+    .scrollIntoView({behavior:'smooth'})">
+    우리의 추억 보러 가기 ↓
+  </button>
 </header>
 
-<main class="wrap">
+<!-- 가족사진 앨범 -->
+<section id="memories">
+  <div style="font-size:30px">📷 🌸</div>
+  <h2 class="section-title">우리 가족의 추억</h2>
+  <p class="subtitle">
+    和媽媽一起度過的珍貴時光
+  </p>
 
-  <section class="panel">
-    <h2>💌 엄마에게 전하는 편지</h2>
-    <div class="letter">사랑하는 엄마에게.
-
-엄마, 생신 정말 축하해요! 🎂
-
-항상 우리를 사랑으로 보살펴 주고
-언제나 든든한 편이 되어 줘서 고마워요.
-
-평소에는 쑥스러워서 다 표현하지 못했지만
-엄마는 나에게 세상에서 가장 소중한 사람이에요.
-
-앞으로는 엄마가 더 많이 웃고,
-좋아하는 것도 마음껏 하면서
-건강하고 행복하게 지냈으면 좋겠어요.
-
-세상에 하나뿐인 우리 엄마,
-태어나 줘서 고맙고 정말 많이 사랑해요.
-
-오늘 하루는 엄마가 주인공이에요! ❤️</div>
-  </section>
-
-  <section class="panel">
-    <h2>📸 우리 함께한 소중한 추억</h2>
-    <p>엄마와 함께 찍은 사진을 골라서 추가해 주세요.</p>
-    <label class="upload-label" for="photoInput">＋ 사진 추가하기</label>
-    <input id="photoInput" type="file" accept="image/*" multiple>
-    <div id="photoPreview" class="preview"></div>
-    <p class="hint">사진은 현재 브라우저 화면에서 미리 볼 수 있어요. 다른 사람과 공유하려면 별도 업로드 기능이 필요해요.</p>
-  </section>
-
-  <section class="panel">
-    <h2>💗 엄마에게 사랑의 메시지 남기기</h2>
-    <p>가족들이 한마디씩 축하 메시지를 적어 보세요.</p>
-    <form id="messageForm">
-      <input id="nickname" maxlength="40"
-        placeholder="이름 또는 애칭 (예: 사랑하는 딸)" required>
-      <textarea id="message" maxlength="1000"
-        placeholder="엄마에게 전하고 싶은 말을 적어 주세요 ♡"
-        required></textarea>
-      <button type="submit">축하 메시지 남기기 ♡</button>
-    </form>
-    <div id="messages">
-      <p class="hint">첫 번째 축하 메시지를 남겨 주세요! 🌸</p>
+  <div class="album">
+    <div class="photo">
+      <img src="./images/family1.jpg" alt="가족사진 1">
+      <p>언제나 함께라서 행복해</p>
     </div>
-    <p class="hint">메시지는 현재 페이지 안에서만 표시되며, 새로고침하면 사라질 수 있어요.</p>
-  </section>
 
-  <section class="panel" style="text-align:center">
-    <div style="font-size:38px">🎂 🎁 💐</div>
-    <h2>엄마, 오래오래 건강하고 행복해요!</h2>
-    <p>매일매일 사랑하고, 오늘은 백 배 더 사랑해요.</p>
-    <p style="color:#b86e83">Happy Birthday to the Best Mom ♡</p>
-  </section>
+    <div class="photo">
+      <img src="./images/family2.jpg" alt="가족사진 2">
+      <p>우리 가족의 소중한 순간</p>
+    </div>
 
-</main>
+    <div class="photo">
+      <img src="./images/family3.jpg" alt="가족사진 3">
+      <p>웃음이 가득했던 하루</p>
+    </div>
+
+    <div class="photo">
+      <img src="./images/family4.jpg" alt="가족사진 4">
+      <p>앞으로도 함께 만들 추억</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>엄마에게 편지 쓰기 · 留下給媽媽的祝福</h2>
+  <form id="form">
+    <div class="field">
+      <label for="nickname">닉네임 · 暱稱（익명 가능／可匿名）</label>
+      <input id="nickname" type="text" maxlength="50"
+        placeholder="사랑하는 딸 · 愛媽媽的女兒">
+    </div>
+
+    <div class="field">
+      <label for="message">축하 메시지 · 生日祝福</label>
+      <textarea id="message" maxlength="1000" required
+        placeholder="엄마, 생일 진심으로 축하해요! 늘 건강하고 행복하세요. ♡&#10;媽媽，祝您生日快樂！希望您每天都健康、幸福。♡"></textarea>
+    </div>
+
+
+
+  
+
+<!-- 마지막 축하 화면 -->
+<section class="closing">
+  <div style="font-size:38px">🎂 💗 🌷</div>
+  <h2>엄마, 태어나 줘서 고마워요</h2>
+
+  <p>
+    媽媽，謝謝妳來到這個世界。<br>
+    謝謝妳一直以來的愛與付出。
+  </p>
+
+  <p>
+    앞으로의 모든 날이 오늘처럼 따뜻하고<br>
+    행복한 일들로 가득하기를 바라요.
+  </p>
+
+  <h3>우리는 언제나 엄마 편이에요.</h3>
+  <p>我們永遠愛妳 ❤️</p>
+  <div style="font-size:28px">♡ ♡ ♡</div>
+</section>
 
 <footer>
-  사랑을 가득 담아, 우리 가족이 ♡
+  Made with love for Mom · 媽媽生日快樂
 </footer>
-
-<script>
-const photoInput = document.getElementById("photoInput");
-const photoPreview = document.getElementById("photoPreview");
-
-photoInput.addEventListener("change", function() {
-  Array.from(this.files).forEach(function(file) {
-    if (!file.type.startsWith("image/")) return;
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      const figure = document.createElement("figure");
-      figure.className = "photo-card";
-      const img = document.createElement("img");
-      img.src = event.target.result;
-      img.alt = "가족의 추억 사진";
-      const caption = document.createElement("figcaption");
-      caption.textContent = file.name;
-      figure.append(img, caption);
-      photoPreview.appendChild(figure);
-    };
-    reader.readAsDataURL(file);
-  });
-  this.value = "";
-});
-
-const form = document.getElementById("messageForm");
-const messages = document.getElementById("messages");
-
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  const nickname = document.getElementById("nickname").value.trim();
-  const message = document.getElementById("message").value.trim();
-  if (!nickname || !message) return;
-
-  const card = document.createElement("article");
-  card.className = "message-card";
-  const name = document.createElement("strong");
-  name.textContent = "♡ " + nickname;
-  const words = document.createElement("p");
-  words.textContent = message;
-  card.append(name, words);
-
-  const hint = messages.querySelector(".hint");
-  if (hint) messages.innerHTML = "";
-  messages.prepend(card);
-  form.reset();
-});
-</script>
 
 </body>
 </html>
