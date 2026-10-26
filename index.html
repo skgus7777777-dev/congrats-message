@@ -6,6 +6,297 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Happy Birthday, Mom ♡</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+/* ═══ MOM'S BIRTHDAY · ROMANTIC SCRAPBOOK ═══ */
+
+:root {
+  --bg: #f7f0eb;
+  --paper: #fffdf9;
+  --text: #594740;
+  --accent: #b78178;
+  --line: #eadbd1;
+  --pink: #f0d8d2;
+}
+
+/* 배경에 은은한 색감 */
+body {
+  background:
+    radial-gradient(ellipse at 0% 10%, #f3ded8 0%, transparent 36%),
+    radial-gradient(ellipse at 100% 45%, #e7e5d9 0%, transparent 32%),
+    #f7f0eb;
+}
+
+/* 카드에 부드러운 입체감 */
+header, .panel {
+  position: relative;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 28px;
+  box-shadow: 0 12px 38px rgba(104,75,60,.075);
+  transition: box-shadow .35s ease;
+}
+
+/* 첫 화면 장식 */
+header {
+  padding-top: 34px;
+  background: rgba(255,253,249,.96);
+}
+
+header > div:first-child {
+  color: #a67d6d;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+h1 {
+  line-height: 1.3;
+  margin: 30px 0 20px;
+  color: #5b4841;
+  font-family: Georgia, "Noto Serif KR", serif;
+  letter-spacing: -1.2px;
+}
+
+h1::after {
+  content: " ✧";
+  color: #c79d85;
+  font-size: .65em;
+}
+
+.subtitle {
+  color: #ad8174;
+  font-size: 16px;
+}
+
+/* 생일 편지 커버 */
+.cover {
+  position: relative;
+  overflow: hidden;
+  padding: 42px 16px;
+  border: 1px solid rgba(255,255,255,.75);
+  background:
+    radial-gradient(circle at 8% 15%, #fff8f0 0%, transparent 34%),
+    linear-gradient(135deg, #ead8cd, #f8eee6 55%, #e7e6d9);
+  box-shadow: inset 0 0 30px rgba(255,255,255,.25);
+}
+
+.cover::before {
+  content: "❀";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: #bd9281;
+  font-size: 28px;
+  opacity: .65;
+}
+
+.cover::after {
+  content: "✿";
+  position: absolute;
+  right: 15px;
+  bottom: 8px;
+  color: #bd9281;
+  font-size: 30px;
+  opacity: .65;
+}
+
+.cover strong {
+  display: block;
+  color: #5b4841;
+  line-height: 1.35;
+}
+
+.cover p {
+  color: #79665d;
+  margin-top: 20px;
+}
+
+/* 섹션 제목에 작은 꽃 장식 */
+h2 {
+  color: #685148;
+  line-height: 1.5;
+}
+
+.panel h2::before {
+  content: "✿  ";
+  color: #c99a88;
+  font-size: .8em;
+}
+
+/* 사진을 폴라로이드처럼 */
+.album {
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.photo-card {
+  position: relative;
+  padding: 9px 9px 4px;
+  background: #fffefa;
+  border: 1px solid #eee2d9;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(91,65,50,.09);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.photo-card:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.photo-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.photo-card:hover {
+  transform: translateY(-5px) rotate(0);
+  box-shadow: 0 12px 24px rgba(91,65,50,.14);
+  z-index: 1;
+}
+
+.photo-card img {
+  border-radius: 3px;
+  aspect-ratio: 4 / 4.5;
+}
+
+.caption {
+  color: #80685c;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 편지 입력창 */
+input[type=text], textarea {
+  background: #fffdfa;
+  border: 1px solid #e9d8ce;
+  border-radius: 15px;
+  color: #594740;
+  transition: border-color .25s, box-shadow .25s;
+}
+
+input[type=text]:focus, textarea:focus {
+  outline: none;
+  border-color: #c69b8d;
+  box-shadow: 0 0 0 4px rgba(198,155,141,.13);
+}
+
+input[type=file] {
+  color: #80685c;
+  font-size: 13px;
+}
+
+/* 축하 메시지 버튼 */
+button {
+  border-radius: 30px;
+  background: linear-gradient(135deg, #bd8b7c, #a8756c);
+  box-shadow: 0 6px 15px rgba(173,120,103,.2);
+  transition: transform .25s, box-shadow .25s;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(173,120,103,.27);
+}
+
+button:active:not(:disabled) {
+  transform: scale(.98);
+}
+
+/* 축하 메시지 카드 */
+.message-card {
+  background: linear-gradient(145deg, #fffaf6, #f9eee8);
+  border: 1px solid #edddd3;
+  border-radius: 18px;
+  box-shadow: 0 5px 16px rgba(104,75,60,.05);
+  transition: transform .25s;
+}
+
+.message-card > div:first-child {
+  color: #a47769;
+  font-weight: bold;
+}
+
+.message-card p {
+  white-space: pre-wrap;
+}
+
+.date {
+  color: #aa9285;
+}
+
+/* 사진 미리보기 */
+#preview {
+  border: 5px solid white;
+  box-shadow: 0 5px 18px rgba(91,65,50,.12);
+}
+
+/* 하단 문구 */
+footer {
+  color: #987e71;
+  line-height: 2;
+  padding: 28px 12px;
+}
+
+/* 화면 등장 효과 */
+@keyframes softAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header, .panel {
+  animation: softAppear .8s ease both;
+}
+
+.panel:nth-of-type(2) { animation-delay: .1s; }
+.panel:nth-of-type(3) { animation-delay: .2s; }
+.panel:nth-of-type(4) { animation-delay: .3s; }
+
+/* 휴대폰에서 자연스럽게 */
+@media (max-width: 600px) {
+  body {
+    padding: 14px 10px;
+  }
+
+  header, .panel {
+    border-radius: 25px;
+    margin-bottom: 20px;
+  }
+
+  header {
+    padding-top: 28px;
+  }
+
+  h1 {
+    font-size: clamp(29px, 7.5vw, 38px);
+  }
+
+  .cover {
+    padding: 36px 10px;
+  }
+
+  .album {
+    gap: 12px;
+  }
+
+  .photo-card {
+    padding: 7px 7px 4px;
+  }
+}
+
+/* 움직임을 줄이도록 설정한 기기 배려 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+  
 <style>
 :root {
   --bg:#f5eee8; --paper:#fffdf9; --text:#594a43;
